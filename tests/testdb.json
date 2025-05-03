@@ -1,0 +1,8 @@
+{
+  "name": "testdb",
+  "containers": {
+    "test": {
+      "testaa": "testbb"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "futuradb.js",
+  "version": "1.0.2",
+  "description": "Document-based database with various integrations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Just1diaxx/futura.js.git"
+  },
+  "author": "Just1diaxx",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Just1diaxx/futura.js/issues"
+  },
+  "homepage": "https://github.com/Just1diaxx/futura.js#readme",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}
