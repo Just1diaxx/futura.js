@@ -2,7 +2,11 @@
   "name": "testdb",
   "containers": {
     "test": {
-      "testaa": "testbb"
+      "testaa": {
+        "name": "testaa",
+        "value": "testbb"
+      },
+      "testcc": "testbb"
     }
   }
 }

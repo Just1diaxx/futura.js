@@ -2,8 +2,5 @@ const Futura = require('futuradb.js');
 
 const db = new Futura({ logging: false, autosaveInterval: 5000 }, 'testdb');
 const cont = db.getContainer('test');
-cont.insert('testaa', {
-    name: 'testaa',
-    value: 'testbb'
-});
-cont.insert('testcc', 'testbb');
+console.log(cont.find('testbb'));
+console.log(cont.findOne('testbb'));

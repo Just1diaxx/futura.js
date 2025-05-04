@@ -30,13 +30,13 @@ class Futura {
             const fileData = fs.readFileSync(dbPath, 'utf8');
             try {
                 data = JSON.parse(fileData);
-                if (options.logging) this.logger.log('Database loaded successfully.');
+                if (options.logging) this.logger.success('Database loaded successfully.');
             } catch (e) {
                 this.logger.error('Failed to parse database:', e);
             }
         } else {
             fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
-            if (options.logging) this.logger.log('Created new database.');
+            if (options.logging) this.logger.success('Created new database.');
         }
 
         const dbInstance = {
@@ -48,7 +48,7 @@ class Futura {
             setInterval(() => {
                 this.save();
             }, options.autosaveInterval);
-            if (options.logging) this.logger.log('Autosave enabled.');
+            if (options.logging) this.logger.success('Autosave enabled.');
         }
 
         this.db = dbInstance;
@@ -58,9 +58,9 @@ class Futura {
      * Get the database path
      * @returns {String} - The path of the database
      */
-    async save() {
+    save() {
         fs.writeFileSync(this.db.path, JSON.stringify(this.db.data, null, 2));
-        if (this.options.logging) this.logger.log(`[${this.db.data.name}] Database saved.`);
+        if (this.options.logging) this.logger.success(`[${this.db.data.name}] Database saved.`);
     }
 
     /**
@@ -68,7 +68,7 @@ class Futura {
      * @param {String} name - The name of the collection
      * @returns {Container}
      */
-    async addContainer(name) {
+    addContainer(name) {
         if (this.db.data.containers[name]) {
             this.logger.warn(`Container ${name} already exists. Returning existing container.`);
             return this.getContainer(name);
@@ -85,7 +85,7 @@ class Futura {
      * @param {String} name - The name of the collection
      * @returns {Container} The collection object
      */
-    async getContainer(name) {
+    getContainer(name) {
         if (!this.db.data.containers[name]) {
             this.logger.error(`Container ${name} does not exist.`);
             return null;
