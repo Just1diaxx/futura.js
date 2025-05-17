@@ -1,6 +1,6 @@
 {
   "name": "futuradb.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Document-based database with various integrations",
   "main": "index.js",
   "scripts": {
