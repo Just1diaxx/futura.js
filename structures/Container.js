@@ -87,8 +87,9 @@ class Container {
      * @param {Buffer} image 
      */
     insertImage(key, image) {
-        const imgBuffer = image.toString('base64');
-        this.data[key] = imgBuffer;
+        const imgBuffer = fs.readFileSync(image);
+        const convertedImgBuffer = imgBuffer.toString('base64');
+        this.data[key] = convertedImgBuffer;
         this.saveToDB();
     }
 
