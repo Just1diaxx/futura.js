@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 class Container {
     constructor(name, db, data = {},) {
         this.name = name;

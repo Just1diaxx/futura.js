@@ -7,8 +7,5 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "futuradb.js": "^1.1.1"
-  }
+  "description": ""
 }
