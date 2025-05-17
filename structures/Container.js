@@ -36,6 +36,15 @@ class Container {
     }
 
     /**
+     * Find a key-value pair by index.
+     * @param {number} index 
+     * @returns {Array} [key, value]
+     */
+    findByIndex(index) {
+        return Object.entries(this.data).find((v, i) => i === index);
+    }
+
+    /**
      * Get the value of a key.
      * @param {String} key 
      * @returns {*}

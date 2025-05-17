@@ -7,12 +7,13 @@ const Container = require('./structures/Container.js');
  * @typedef {Object} DatabaseOptions
  * @property {boolean} logging - If true, log all database operations
  * @property {number} autosaveInterval - Interval in milliseconds for autosaving the database
+ * @property {string} extension - The file extension of the database file (default: 'json')
  */
 
 class Futura {
     /**
      * 
-     * @param {DatabaseOptions} options - Database options
+     * @see {@link DatabaseOptions} - Database options
      * @param {String} name - The name of the database
      */
     constructor(options, name = 'database') {
@@ -30,13 +31,13 @@ class Futura {
             const fileData = fs.readFileSync(dbPath, 'utf8');
             try {
                 data = JSON.parse(fileData);
-                if (options.logging) this.logger.success('Database loaded successfully.');
+                this.logger.success('Database loaded successfully.');
             } catch (e) {
                 this.logger.error('Failed to parse database:', e);
             }
         } else {
             fs.writeFileSync(dbPath, JSON.stringify(data, null, 2));
-            if (options.logging) this.logger.success('Created new database.');
+            this.logger.success('Created new database.');
         }
 
         const dbInstance = {
@@ -55,8 +56,7 @@ class Futura {
     }
 
     /**
-     * Get the database path
-     * @returns {String} - The path of the database
+     * Save the database to disk
      */
     save() {
         fs.writeFileSync(this.db.path, JSON.stringify(this.db.data, null, 2));

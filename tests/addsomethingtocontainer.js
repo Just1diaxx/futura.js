@@ -7,3 +7,4 @@ cont.insert('testaa', {
     value: 'testbb'
 });
 cont.insert('testcc', 'testbb');
+cont.insert('testdd', 'testbb');
