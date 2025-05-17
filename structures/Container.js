@@ -78,6 +78,29 @@ class Container {
     saveToDB() {
         this.db.data.containers[this.name] = this.data;
     }
+
+    // Images functions -- futura uses a special method to store images //
+
+    /**
+     * Insert an image in the container.
+     * @param {String} key 
+     * @param {Buffer} image 
+     */
+    insertImage(key, image) {
+        const imgBuffer = image.toString('base64');
+        this.data[key] = imgBuffer;
+        this.saveToDB();
+    }
+
+    /**
+     * Get an image from the container.
+     * @param {String} key 
+     * @returns {Buffer}
+     */
+    getImage(key) {
+        return Buffer.from(this.data[key], 'base64');
+    }
+
 }
 
 module.exports = Container;
