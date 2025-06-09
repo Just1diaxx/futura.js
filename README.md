@@ -2,9 +2,9 @@
 Document-based database with various integrations
 
 ## How to install
-```
+> ```
 > npm i futuradb.js
-```
+> ```
 
 ## How to use it
 It's so simple to use. It supports in-memory allocation and autosave.
