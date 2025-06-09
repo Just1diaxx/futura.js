@@ -1,2 +1,2 @@
 const futura = require('futuradb.js');
-const db = new futura({ logging: true, autosaveInterval: 5000 }, 'testdb');
+const db = new futura({ logging: true, autosaveInterval: 5000, extension: 'db' }, 'testdb');

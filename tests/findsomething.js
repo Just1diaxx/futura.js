@@ -1,6 +1,6 @@
 const Futura = require('futuradb.js');
 
-const db = new Futura({ logging: false, autosaveInterval: 5000 }, 'testdb');
+const db = new Futura({ logging: false, autosaveInterval: 5000, extension: 'db' }, 'testdb');
 const cont = db.getContainer('test');
 console.log(cont.find('testbb'));
 console.log(cont.findOne('testbb'));

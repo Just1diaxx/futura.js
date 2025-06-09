@@ -21,7 +21,7 @@ class Futura {
         this.logger = new Logger('Futura');
         this.options = options;
 
-        const dbPath = path.join(process.cwd(), `${name}.json`);
+        const dbPath = path.join(process.cwd(), `${name}.${options.extension || 'json'}`);
         let data = {
             name,
             containers: {}
